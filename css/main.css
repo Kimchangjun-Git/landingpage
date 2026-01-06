@@ -516,6 +516,11 @@ body {
 
     .hero-actions {
         justify-content: center;
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .hero-content {
@@ -525,22 +530,48 @@ body {
 
     .hero-phone-mockup {
         transform: rotateY(0) rotateX(0);
-        /* Remove complex 3D on mobile for performance/layout */
         animation: none;
-        /* Simplify */
         margin: 0 auto;
     }
 
-    @keyframes float {
-        /* Reset float for mobile if re-enabled later, but typically simple is better */
+    .trust-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
     }
 
     .comparison-grid {
         grid-template-columns: 1fr;
+        gap: var(--space-4);
+    }
+
+    .feature-card,
+    .problem-box,
+    .solution-box {
+        text-align: center;
+    }
+
+    .list-item {
+        justify-content: center;
+        text-align: left;
+    }
+
+    .section {
+        padding: var(--space-10) 0;
     }
 
     .heading-xl {
         font-size: var(--text-3xl);
+    }
+
+    .text-gradient.text-rotator {
+        background: linear-gradient(135deg, hsl(210, 85%, 45%), hsl(200, 90%, 40%));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .sticky-app-info p {
+        display: none;
     }
 }
 
@@ -638,12 +669,25 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 var(--container-padding);
+    gap: var(--space-2);
 }
 
 .sticky-app-info {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    min-width: 0;
+}
+
+.sticky-app-info .text-content {
+    min-width: 0;
+}
+
+.sticky-app-info h4 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: var(--text-base);
 }
 
 .sticky-icon {
