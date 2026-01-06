@@ -570,8 +570,31 @@ body {
         background-clip: text;
     }
 
-    .sticky-app-info p {
-        display: none;
+    .brand-desc {
+        display: none !important;
+    }
+}
+
+@media (max-width: 350px) {
+    :root {
+        --container-padding: var(--space-4);
+    }
+
+    .heading-xl {
+        font-size: var(--text-2xl);
+    }
+
+    .hero-actions {
+        padding: 0 var(--space-2);
+    }
+
+    .brand-subtext {
+        display: none !important;
+    }
+
+    .brand-title {
+        font-size: var(--text-sm);
+        font-weight: 700;
     }
 }
 
